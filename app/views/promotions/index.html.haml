@@ -1,1 +1,3 @@
-promotions index
+- @promotions.each do |promotion|
+  %h2= link_to promotion.pitch, promotion
+  %h2= promotion.price
