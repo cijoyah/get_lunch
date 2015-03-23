@@ -20,6 +20,7 @@ gem 'faker'
 gem 'carrierwave'
 gem 'better_errors', '~> 2.1.1'
 gem 'bootstrap-sass', '~> 3.3.4'
+gem 'rmagick'
 
 
 group :development, :test do
