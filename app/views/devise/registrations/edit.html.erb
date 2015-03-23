@@ -6,7 +6,8 @@
   <div class="form-inputs">
     <%= f.input :email, required: true, autofocus: true %>
     <%= f.input :name, required: true %>
-    <%= f.input :street, required: true %>
+    <%= f.file_field :avatar, required: true %>
+    <%= f.input :address, required: true %>
     <%= f.input :city, required: true %>
     <%= f.input :postcode, required: true %>
     <%= f.input :tel, required: true %>
@@ -18,6 +19,12 @@
     <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false %>
     <%= f.input :password_confirmation, required: false %>
     <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true %>
+  </div>
+
+  <div class="form-optional-inputs">
+    <%= f.input :website %>
+    <%= f.input :facebook %>
+    <%= f.input :twitter %>
   </div>
 
   <div class="form-actions">

@@ -1,5 +1,3 @@
-%h1 Promotion Show
-
 %h2= @promotion.pitch
 %h2= @promotion.description
 %h2= @promotion.price
@@ -9,7 +7,9 @@
 %h2= @promotion.cuisine
 %h2= @promotion.hotness
 
-=link_to "Edit", edit_promotion_path(@promotion)
-=link_to "Delete", promotion_path(@promotion), method: :delete
+-if current_user
+  - if current_user.id == @promotion.user.id
+    =link_to "Edit", edit_promotion_path(@promotion)
+    =link_to "Delete", promotion_path(@promotion), method: :delete
 
-%h2= @promotion.business.name
+%h2= @promotion.user.name

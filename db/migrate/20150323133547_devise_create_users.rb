@@ -1,6 +1,6 @@
-class AddDeviseToBusinesses < ActiveRecord::Migration
-  def self.up
-    change_table(:businesses) do |t|
+class DeviseCreateUsers < ActiveRecord::Migration
+  def change
+    create_table(:users) do |t|
       ## Database authenticatable
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
@@ -19,6 +19,17 @@ class AddDeviseToBusinesses < ActiveRecord::Migration
       t.inet     :current_sign_in_ip
       t.inet     :last_sign_in_ip
 
+      t.string   :name
+      t.string   :avatar
+      t.string   :role
+      t.string   :address
+      t.string   :city
+      t.string   :postcode
+      t.string   :website
+      t.string   :tel
+      t.string   :facebook
+      t.string   :twitter
+
       ## Confirmable
       # t.string   :confirmation_token
       # t.datetime :confirmed_at
@@ -30,20 +41,16 @@ class AddDeviseToBusinesses < ActiveRecord::Migration
       # t.string   :unlock_token # Only if unlock strategy is :email or :both
       # t.datetime :locked_at
 
+     
+        
 
-      # Uncomment below if timestamps were not included in your original model.
-      # t.timestamps
+
+      t.timestamps
     end
 
-    add_index :businesses, :email,                unique: true
-    add_index :businesses, :reset_password_token, unique: true
-    # add_index :businesses, :confirmation_token,   unique: true
-    # add_index :businesses, :unlock_token,         unique: true
-  end
-
-  def self.down
-    # By default, we don't want to make any assumption about how to roll back a migration when your
-    # model already existed. Please edit below which fields you would like to remove in this migration.
-    raise ActiveRecord::IrreversibleMigration
+    add_index :users, :email,                unique: true
+    add_index :users, :reset_password_token, unique: true
+    # add_index :users, :confirmation_token,   unique: true
+    # add_index :users, :unlock_token,         unique: true
   end
 end

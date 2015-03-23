@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
 
-  devise_for :businesses
-  resources :businesses
+  devise_for :users
   resources :promotions
 
   root 'promotions#index'

@@ -6,17 +6,20 @@
   <div class="form-required-inputs">
     <%= f.input :email, required: true, autofocus: true %>
     <%= f.input :name, required: true %>
-    <%= f.input :street, required: true %>
+    <%= f.file_field :avatar, required: true %>
+    <%= f.input :address, required: true %>
     <%= f.input :city, required: true %>
     <%= f.input :postcode, required: true %>
     <%= f.input :tel, required: true %>
+    
     <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @validatable) %>
     <%= f.input :password_confirmation, required: true %>
   </div>
 
   <div class="form-optional-inputs">
-    <%= f.input :facebook, required: true, autofocus: true %>
-    <%= f.input :twitter, required: true, autofocus: true %>
+    <%= f.input :website %>
+    <%= f.input :facebook %>
+    <%= f.input :twitter %>
   </div>
 
   <div class="form-actions">
