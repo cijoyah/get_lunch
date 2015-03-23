@@ -11,3 +11,5 @@
 
 =link_to "Edit", edit_promotion_path(@promotion)
 =link_to "Delete", promotion_path(@promotion), method: :delete
+
+%h2= @promotion.business.name
