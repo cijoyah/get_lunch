@@ -1,6 +1,7 @@
 class PromotionsController < ApplicationController
 
     before_action :find_promotion, only: [:show, :edit, :update, :destroy]
+    before_action :authenticate_business!, except: [:show, :index]
 
     def index
       @promotions = Promotion.all.order("created_at DESC")
@@ -9,17 +10,17 @@ class PromotionsController < ApplicationController
     def show
     end
 
+    def new
+      @promotion = current_business.promotions.build
+    end
+
     def create
-      @promotion = Promotion.new(promotion_params)
+      @promotion = current_business.promotions.build(promotion_params)
       if @promotion.save
         redirect_to @promotion
       else
         render 'new'
       end
-    end
-
-    def new
-      @promotion = Promotion.new
     end
 
     def edit

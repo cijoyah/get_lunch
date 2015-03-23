@@ -5,6 +5,8 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
+  %p.notice= notice
+  %p.alert= alert
   %ul
     %l1
       = link_to"Home", root_path

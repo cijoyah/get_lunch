@@ -7,7 +7,6 @@ class CreateBusinesses < ActiveRecord::Migration
       t.string :postcode
       t.string :website
       t.string :tel
-      t.string :email
       t.string :facebook
       t.string :twitter
 
