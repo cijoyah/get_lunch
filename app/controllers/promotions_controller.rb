@@ -16,6 +16,7 @@ class PromotionsController < ApplicationController
 
     def create
       @promotion = current_user.promotions.build(promotion_params)
+      
       if @promotion.save
         redirect_to @promotion
       else
@@ -46,7 +47,7 @@ class PromotionsController < ApplicationController
     end
 
     def promotion_params
-      params.require(:promotion).permit(:pitch, :description, :price, :available_on_date, :start_time, :end_time, :cuisine, :hotness)
+      params.require(:promotion).permit(:pitch, :description, :price, :available_on_date, :start_time, :end_time, :cuisine, :hotness, :user_id)
     end
 
 end
