@@ -19,6 +19,7 @@ gem 'rails_admin'
 gem 'faker'
 gem 'carrierwave'
 gem 'better_errors', '~> 2.1.1'
+gem 'bootstrap-sass', '~> 3.3.4'
 
 
 group :development, :test do

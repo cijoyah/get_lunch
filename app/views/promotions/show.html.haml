@@ -1,3 +1,5 @@
+
+= image_tag @promotion.user.avatar.url
 %h2= @promotion.user.name
 
 %h2= @promotion.pitch
@@ -15,4 +17,5 @@
     =link_to "Delete", promotion_path(@promotion), method: :delete
 
 
-/ %h2= image_tag, @promotion.user.avatar
+
+
