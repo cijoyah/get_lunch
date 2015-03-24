@@ -21,6 +21,7 @@ gem 'carrierwave'
 gem 'better_errors', '~> 2.1.1'
 gem 'bootstrap-sass', '~> 3.3.4'
 gem 'rmagick'
+gem 'stripe'
 
 
 group :development, :test do

@@ -1,19 +1,16 @@
 %html
   %head
     %title GetLunch
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = stylesheet_link_tag    'application', media: 'all'
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
-  %p.notice= notice
-  %p.alert= alert
-  %ul.hmenu
-  = render 'devise/menu/registration_items'
-  = render 'devise/menu/login_items'
-  %ul
-    %l1
-      = link_to"Home", root_path
-  - if user_signed_in?
-    %li
-      = link_to"New Promotion", new_promotion_path
-  = yield
+    %header
+      .wrapper.clearfix
+        #logo= link_to "LOGO", root_path
+        %nav
+          = render 'devise/menu/nav_items'
+    %p.notice= notice
+    %p.alert= alert
+    
+    = yield
