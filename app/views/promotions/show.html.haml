@@ -1,6 +1,8 @@
 
 = image_tag @promotion.user.avatar.thumb.url
 %h2= @promotion.user.name
+%h2#address= @promotion.user.postcode
+
 
 %h2= @promotion.pitch
 %h2= @promotion.description
@@ -15,6 +17,16 @@
   - if current_user.id == @promotion.user.id
     =link_to "Edit", edit_promotion_path(@promotion)
     =link_to "Delete", promotion_path(@promotion), method: :delete
+
+#map-container
+  #map-canvas
+
+
+/ <%= javascript_tag do %>
+/         var userShow = <%= raw @promotion.user.current_user.to_json%>
+/         var currentTip = <%= raw Tip.last.to_json %>
+/         var tipsters = <%= raw User.where(role: "Tipster").to_json %>
+/ <% end %> 
 
 
 

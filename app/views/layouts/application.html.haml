@@ -7,10 +7,13 @@
   %body
     %header
       .wrapper.clearfix
-        #logo= link_to "LOGO", root_path
+        #logo= link_to "FoodStop", root_path
         %nav
           = render 'devise/menu/nav_items'
     %p.notice= notice
     %p.alert= alert
-    
-    = yield
+
+    .wrapper
+      = yield
+
+%script{:src => "https://maps.googleapis.com/maps/api/js?key=AIzaSyCgFp1DYdJKHmPIHyOU3jhGRlgqdM45wz0"}
