@@ -22,12 +22,6 @@
   #map-canvas
 
 
-/ <%= javascript_tag do %>
-/         var userShow = <%= raw @promotion.user.current_user.to_json%>
-/         var currentTip = <%= raw Tip.last.to_json %>
-/         var tipsters = <%= raw User.where(role: "Tipster").to_json %>
-/ <% end %> 
-
 
 
 
