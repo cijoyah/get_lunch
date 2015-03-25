@@ -1,8 +1,5 @@
 class ChargesController < ApplicationController
 
-  def new
-  end
-
   def create
     @promotion = Promotion.find(params[:promotion_id])
     @amount = @promotion.price*100
