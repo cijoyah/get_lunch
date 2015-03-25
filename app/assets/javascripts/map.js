@@ -43,13 +43,11 @@ function handleNoGeolocation(errorFlag) {
   } else {
     var content = 'Error: Your browser doesn\'t support geolocation.';
   }
-
   var options = {
     map: map,
     position: new google.maps.LatLng(60, 105),
     content: content
   };
-
   var infowindow = new google.maps.InfoWindow(options);
   map.setCenter(options.position);
 }
@@ -83,6 +81,5 @@ function calcRoute(pos) {
     map.fitBounds(bounds);
   });
 }
-
 google.maps.event.addDomListener(window, 'load', initialize);
 })
