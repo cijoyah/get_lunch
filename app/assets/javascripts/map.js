@@ -4,9 +4,8 @@ var directionsDisplay;
 var directionsService = new google.maps.DirectionsService();
 var geocoder;
 var map;
-// var startPoint = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+var bounds = new google.maps.LatLngBounds();
 var endPoint = $('#address').text();
-
 
 function initialize() {
   directionsDisplay = new google.maps.DirectionsRenderer();
@@ -81,6 +80,7 @@ function calcRoute(pos) {
     if (status == google.maps.DirectionsStatus.OK) {
       directionsDisplay.setDirections(response);
     }
+    map.fitBounds(bounds);
   });
 }
 
