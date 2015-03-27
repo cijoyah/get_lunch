@@ -1,7 +1,9 @@
 - if user_signed_in?
+  - if current_user.role == "business"
     = link_to current_user.name, edit_user_registration_path
     = link_to "Create Promotion", new_promotion_path, class:"button"
-    = link_to('Logout', destroy_user_session_path, :method => :delete)
+  = link_to('Logout', destroy_user_session_path, :method => :delete)
 - else
-    = link_to('Login', new_user_session_path)
-    = link_to "Sign Up", new_user_registration_path, class:"button"
+  %button.button{"data-target" => "#sign_in", "data-toggle" => "modal"}Sign In Cust
+  %button.button{"data-target" => "#sign_up", "data-toggle" => "modal", :type => "button"}Sign Up Cust
+  

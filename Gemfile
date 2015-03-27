@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+#default gems
 gem 'rails', '4.2.0'
 gem 'pg'
 gem 'sass-rails', '~> 5.0'
@@ -11,7 +11,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
-# selected gems
+# installed gems
 gem 'haml'
 gem 'simple_form'
 gem 'devise'
@@ -22,6 +22,8 @@ gem 'better_errors', '~> 2.1.1'
 gem 'bootstrap-sass', '~> 3.3.4'
 gem 'rmagick'
 gem 'stripe'
+gem 'twilio-ruby'
+gem 'twitter'
 
 
 group :development, :test do

@@ -1,8 +1,5 @@
-
 = image_tag @promotion.user.avatar.thumb.url
 %h2= @promotion.user.name
-
-
 
 %h2= @promotion.pitch
 %h2= @promotion.description
@@ -22,6 +19,7 @@
   #map-canvas
 
 #address
+  %h2= @promotion.user.name
   %h3= @promotion.user.address
   %h3= @promotion.user.city
   %h3= @promotion.user.postcode
