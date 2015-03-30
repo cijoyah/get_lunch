@@ -25,6 +25,7 @@ gem 'stripe'
 gem 'twilio-ruby'
 gem 'twitter'
 gem 'rails_12factor'
+gem 'geocoder'
 
 
 group :development, :test do
