@@ -89,6 +89,8 @@ GEM
       multipart-post (>= 1.2, < 3)
     font-awesome-rails (4.3.0.0)
       railties (>= 3.2, < 5.0)
+    font-awesome-sass (4.3.2.1)
+      sass (~> 3.2)
     geocoder (1.2.8)
     globalid (0.3.3)
       activesupport (>= 4.1.0)
@@ -274,6 +276,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   devise
   faker
+  font-awesome-sass
   geocoder
   haml
   jbuilder (~> 2.0)

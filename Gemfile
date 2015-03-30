@@ -26,6 +26,7 @@ gem 'twilio-ruby'
 gem 'twitter'
 gem 'rails_12factor'
 gem 'geocoder'
+gem 'font-awesome-sass'
 
 
 group :development, :test do

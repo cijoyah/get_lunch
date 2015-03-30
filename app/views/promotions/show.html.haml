@@ -4,12 +4,14 @@
       = image_tag @promotion.user.avatar.thumb.url
       %h2= @promotion.user.name
 
+      %h4#countdown -- Days --Hours -- Mins -- Secs
+
       %h4= @promotion.pitch
       %h4= @promotion.description
-      %h4= @promotion.price
+      %h4= number_to_currency(@promotion.price, unit: '£')
       %h4= @promotion.available_on_date
-      %h4= @promotion.start_time
-      %h4= @promotion.end_time
+      %h4#promotion_from= @promotion.start_time
+      %h4#promotion_to= @promotion.end_time
       %h4= @promotion.cuisine
       %h4= @promotion.hotness
 
@@ -19,7 +21,6 @@
           =link_to "Delete", promotion_path(@promotion), method: :delete
       
       =render "charges/stripe_form", promotion: @promotion 
-
 
     .col-md-5
       #map-container
