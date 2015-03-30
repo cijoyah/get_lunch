@@ -20,7 +20,7 @@
     %p.notice= notice
     %p.alert= alert
 
-    .wrapper
+    .wrapper.body
     = yield
 
     .wrapper
@@ -54,9 +54,14 @@
               = f.input :email, required: false, autofocus: true
               = f.input :password, required: false
               = f.input :remember_me, as: :boolean if devise_mapping.rememberable?
+              = f.hidden_field :role, value: "customer" 
               = f.button :submit, "Sign In"
             = render "devise/shared/links"
 
+    - unless user_signed_in?
+      #business-link.button= link_to "Create Promo"
+
+    
     
 
  

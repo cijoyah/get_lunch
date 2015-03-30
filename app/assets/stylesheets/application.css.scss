@@ -8,7 +8,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .wrapper {
-  width: 80%;
+  width: 70%;
   margin: 0 auto;
 }
 
@@ -28,6 +28,13 @@ h1, h2, h3, h4, h5, h6 {
   outline: none;
   background: white;
   color: #9B9B9B;
+}
+
+#business-link {
+  position: fixed;
+  width: 120px;
+  bottom: 20px;
+  right: 20px;
 }
 
 header {

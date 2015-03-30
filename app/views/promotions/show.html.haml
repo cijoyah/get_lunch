@@ -1,30 +1,36 @@
-= image_tag @promotion.user.avatar.thumb.url
-%h2= @promotion.user.name
+.wrapper
+  .row
+    .col-md-7
+      = image_tag @promotion.user.avatar.thumb.url
+      %h2= @promotion.user.name
 
-%h2= @promotion.pitch
-%h2= @promotion.description
-%h2= @promotion.price
-%h2= @promotion.available_on_date
-%h2= @promotion.start_time
-%h2= @promotion.end_time
-%h2= @promotion.cuisine
-%h2= @promotion.hotness
+      %h4= @promotion.pitch
+      %h4= @promotion.description
+      %h4= @promotion.price
+      %h4= @promotion.available_on_date
+      %h4= @promotion.start_time
+      %h4= @promotion.end_time
+      %h4= @promotion.cuisine
+      %h4= @promotion.hotness
 
--if current_user
-  - if current_user.id == @promotion.user.id
-    =link_to "Edit", edit_promotion_path(@promotion)
-    =link_to "Delete", promotion_path(@promotion), method: :delete
+      -if current_user
+        - if current_user.id == @promotion.user.id
+          =link_to "Edit", edit_promotion_path(@promotion)
+          =link_to "Delete", promotion_path(@promotion), method: :delete
+      
+      =render "charges/stripe_form", promotion: @promotion 
 
-#map-container
-  #map-canvas
 
-#address
-  %h2= @promotion.user.name
-  %h3= @promotion.user.address
-  %h3= @promotion.user.city
-  %h3= @promotion.user.postcode
+    .col-md-5
+      #map-container
+        #map-canvas
 
-=render "charges/stripe_form", promotion: @promotion 
+      #address
+        %h4= @promotion.user.name
+        %h4= @promotion.user.address
+        %h4= @promotion.user.city
+        %h4= @promotion.user.postcode
+
 
 
 

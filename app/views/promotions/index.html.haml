@@ -1,25 +1,19 @@
-#promotions
-  - @promotions.each do |promotion|
-    .promotion
-      .promotion_image
-        =link_to (image_tag promotion.user.avatar.thumb.url), promotion
-      .promotion_content
-        .title
-          %h2= link_to promotion.pitch, promotion
-        .data.clearfix
-          %p.name
-            = promotion.user.name
-        
-
-
-
-
-
-
-
+.wrapper
+  #promotions
+    - @promotions.each do |promotion|
+      .promotion
+        .promotion_image
+          =link_to (image_tag promotion.user.avatar.thumb.url), promotion
+        .promotion_content
+          .title
+            %h2= link_to promotion.pitch, promotion
+          .data.clearfix
+            %p.name
+              = promotion.user.name
+          
     / .promotion_content
     /   .title
     /     %h2= link_to promotion.pitch, promotion
     /   %p.username
     /     = promotion.user.name
-    /      %h2= promotion.price
+    /     %h2= promotion.price
