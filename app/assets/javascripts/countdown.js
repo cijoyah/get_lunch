@@ -5,8 +5,8 @@
 
 $(function(){
 
-from = $("#promotion_from").text()
-to = $("#promotion_to").text()
+from = $("#promotion_from").val()
+to = $("#promotion_to").val()
 
 
 console.log(from)  

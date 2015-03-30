@@ -10,8 +10,10 @@
       %h4= @promotion.description
       %h4= number_to_currency(@promotion.price, unit: '£')
       %h4= @promotion.available_on_date
-      %h4#promotion_from= @promotion.start_time
-      %h4#promotion_to= @promotion.end_time
+      = hidden_field_tag 'promotion_from', @promotion.start_time
+      = hidden_field_tag 'promotion_to', @promotion.end_time
+      / %h4#promotion_from= @promotion.start_time
+      / %h4#promotion_to= @promotion.end_time
       %h4= @promotion.cuisine
       %h4= @promotion.hotness
 
