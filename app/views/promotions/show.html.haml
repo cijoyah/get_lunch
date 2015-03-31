@@ -15,6 +15,8 @@
         = hidden_field_tag 'promotion_to', @promotion.end_time
         %h4= @promotion.cuisine
         %h4= @promotion.hotness
+        %h4.distance
+        %h4.duration
 
         -if current_user
           - if current_user.id == @promotion.user.id

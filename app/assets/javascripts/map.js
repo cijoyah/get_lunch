@@ -62,11 +62,14 @@ function calculateDistances(pos) {
       unitSystem: google.maps.UnitSystem.METRIC,
       avoidHighways: false,
       avoidTolls: false
-    }, distanceCallback);
+    }, callback);
 }
 
-function distanceCallback(response, status) {
-  console.log(response)
+function callback(response, status) {
+  console.log(response.rows[0].elements[0].distance.text)
+  console.log(response.rows[0].elements[0].duration.text)
+  $('.duration').append(response.rows[0].elements[0].duration.text)
+  $('.distance').append(response.rows[0].elements[0].distance.text)
   console.log(status)
 }
 
