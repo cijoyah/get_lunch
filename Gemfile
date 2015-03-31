@@ -27,6 +27,7 @@ gem 'twitter'
 gem 'rails_12factor'
 gem 'geocoder'
 gem 'font-awesome-sass'
+gem 'fog'
 
 
 group :development, :test do
