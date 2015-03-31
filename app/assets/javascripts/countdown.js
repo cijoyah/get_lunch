@@ -22,10 +22,8 @@ if(new Date(from) < new Date()){
             var now = new Date();
             var distance = end - now;
             if (distance < 0) {
-
                 clearInterval(timer);
                 document.getElementById(id).innerHTML = 'THIS OFFER HAS NOW ENDED!';
-
                 return;
             }
 

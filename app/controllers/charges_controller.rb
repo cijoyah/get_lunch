@@ -16,15 +16,12 @@ class ChargesController < ApplicationController
       :currency    => 'gbp'
     )
 
-    send_customer_text('08766757')
-    send_business_text('345678')
+    client = Twilio::REST::Client.new
 
-    @client = Twilio::REST::Client.new
-    # @client.messages.create(
-    # from: '+15005550006',
-    # to: '+447931525255',
-    # body: 'Hey there!'
-    # )
+    customer_response = send_customer_text(client, '+447960577601')
+    business_responce = send_business_text(client, '+447960577601')
+
+    puts customer_response.status
 
   rescue Stripe::CardError => e
     flash[:error] = e.message
@@ -32,18 +29,18 @@ class ChargesController < ApplicationController
     redirect_to @promotion
   end
 
-  def send_customer_text(customer_number)
-    @client.messages.create(
+  def send_customer_text(client, customer_number)
+    client.messages.create(
     from: '+15005550006',
     to: customer_number,
     body: 'Hey there!'
     )
   end
 
-  def send_business_text(business_numbr)
-     @client.messages.create(
+  def send_business_text(client, business_number)
+    client.messages.create(
     from: '+15005550006',
-    to: business_numbr,
+    to: business_number,
     body: 'Hey fejbhjeshbgeksjhbgsekjbjrng!'
     )
   end

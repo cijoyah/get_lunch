@@ -56,13 +56,18 @@ function calculateDistances(pos) {
   var service = new google.maps.DistanceMatrixService();
   service.getDistanceMatrix(
     {
-      origins: pos,
-      destinations: endPoint,
+      origins: [pos],
+      destinations: [endPoint],
       travelMode: google.maps.TravelMode.WALKING,
       unitSystem: google.maps.UnitSystem.METRIC,
       avoidHighways: false,
       avoidTolls: false
-    }, callback);
+    }, distanceCallback);
+}
+
+function distanceCallback(response, status) {
+  console.log(response)
+  console.log(status)
 }
 
 function codeAddress() {
@@ -93,6 +98,7 @@ function calcRoute(pos) {
     }
     map.fitBounds(bounds);
   });
+  calculateDistances(pos);
 }
 google.maps.event.addDomListener(window, 'load', initialize);
 })
