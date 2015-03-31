@@ -1,22 +1,12 @@
-// var from = document.getElementById("promotion_from").innerHTML
-// var to = document.getElementById("promotion_to").innerHTML
-// var range = moment().range(from, to);
-
-
 $(function(){
 
 from = $("#promotion_from").val()
 to = $("#promotion_to").val()
-
-
 console.log(from)  
 
 if(new Date(from) < new Date()){
-
     CountDownTimer(to, 'countdown');
 }
-
-// console.log(range)
 
     function CountDownTimer(dt, id)
     {
@@ -52,4 +42,4 @@ if(new Date(from) < new Date()){
 
         timer = setInterval(showRemaining, 1000);
     }
-    })
+})

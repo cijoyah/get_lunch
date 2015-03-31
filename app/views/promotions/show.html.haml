@@ -13,8 +13,6 @@
         %h4= @promotion.available_on_date
         = hidden_field_tag 'promotion_from', @promotion.start_time
         = hidden_field_tag 'promotion_to', @promotion.end_time
-        / %h4#promotion_from= @promotion.start_time
-        / %h4#promotion_to= @promotion.end_time
         %h4= @promotion.cuisine
         %h4= @promotion.hotness
 
@@ -23,7 +21,8 @@
             =link_to "Edit", edit_promotion_path(@promotion)
             =link_to "Delete", promotion_path(@promotion), method: :delete
         
-        =render "charges/stripe_form", promotion: @promotion 
+        - unless DateTime.now > @promotion.end_time
+          =render "charges/stripe_form", promotion: @promotion 
 
       .col-md-5
         #map-container

@@ -7,13 +7,9 @@
         .promotion_content
           .title
             %h2= link_to promotion.pitch, promotion
+          = hidden_field_tag 'promotion_from', promotion.start_time
+          = hidden_field_tag 'promotion_to', promotion.end_time
+          %h4#countdown -- Days --Hours -- Mins -- Secs
           .data.clearfix
             %p.name
               = promotion.user.name
-          
-    / .promotion_content
-    /   .title
-    /     %h2= link_to promotion.pitch, promotion
-    /   %p.username
-    /     = promotion.user.name
-    /     %h2= promotion.price

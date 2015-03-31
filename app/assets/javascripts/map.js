@@ -52,6 +52,19 @@ function handleNoGeolocation(errorFlag) {
   map.setCenter(options.position);
 }
 
+function calculateDistances(pos) {
+  var service = new google.maps.DistanceMatrixService();
+  service.getDistanceMatrix(
+    {
+      origins: pos,
+      destinations: endPoint,
+      travelMode: google.maps.TravelMode.WALKING,
+      unitSystem: google.maps.UnitSystem.METRIC,
+      avoidHighways: false,
+      avoidTolls: false
+    }, callback);
+}
+
 function codeAddress() {
   var address = $('#address').text();
   geocoder.geocode( { 'address': address}, function(results, status) {
