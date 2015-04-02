@@ -1,6 +1,7 @@
 class NotificationsController < ApplicationController
  
   skip_before_action :verify_authenticity_token
+
  
   def notify
 
@@ -16,4 +17,5 @@ class NotificationsController < ApplicationController
       # puts 'fail'
     end
   end
+  
 end
