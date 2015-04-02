@@ -10,6 +10,7 @@
           = hidden_field_tag "promotion_to", @promotion.end_time, :id => "promotion_to_#{@promotion.id}", :class => "promotion_to"
           %h4{id: "countdown_#{@promotion.id}", :class => "countdown"} -- Days --Hours -- Mins -- Secs
 
+
         %h4= @promotion.pitch
         %h4= @promotion.description
         %h4= number_to_currency(@promotion.price, unit: '£')
