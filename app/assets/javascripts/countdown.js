@@ -1,15 +1,7 @@
 $(function(){
 
-from = $("#promotion_from").val()
-to = $("#promotion_to").val()
-console.log(from)  
 
-if(new Date(from) < new Date()){
-    CountDownTimer(to, 'countdown');
-}
-
-    function CountDownTimer(dt, id)
-    {
+    function CountDownTimer(dt, id){
         var end = new Date(dt);
 
         var _second = 1000;
@@ -40,4 +32,25 @@ if(new Date(from) < new Date()){
 
         timer = setInterval(showRemaining, 1000);
     }
+
+    $('.promotion_content').each(function(k, v){
+        var from = $(this).find('.promotion_from').val()
+        var to = $(this).find('.promotion_to').val()
+        var countdown = $(this).find('.countdown').attr('id')
+        console.log("countdown_id", countdown)
+        CountDownTimer(to, countdown)
+
+    })
+
+
+
+
+    // from = $("#promotion_from").val()
+    // to = $("#promotion_to").val()
+    // console.log(from)
+
+
+    // if(new Date(from) < new Date()){
+    //     CountDownTimer(to, 'countdown');
+    // }
 })

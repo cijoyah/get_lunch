@@ -5,14 +5,15 @@
         = image_tag @promotion.user.avatar.show.url
         %h2= @promotion.user.name
 
-        %h4#countdown -- Days --Hours -- Mins -- Secs
+        %div{class: "promotion_content", id: "promotion_content#{@promotion.id}"}
+          = hidden_field_tag "promotion_from", @promotion.start_time, :id => "promotion_from_#{@promotion.id}", :class => "promotion_from"
+          = hidden_field_tag "promotion_to", @promotion.end_time, :id => "promotion_to_#{@promotion.id}", :class => "promotion_to"
+          %h4{id: "countdown_#{@promotion.id}", :class => "countdown"} -- Days --Hours -- Mins -- Secs
 
         %h4= @promotion.pitch
         %h4= @promotion.description
         %h4= number_to_currency(@promotion.price, unit: '£')
         %h4= @promotion.available_on_date
-        = hidden_field_tag 'promotion_from', @promotion.start_time
-        = hidden_field_tag 'promotion_to', @promotion.end_time
         %h4= @promotion.cuisine
         %h4= @promotion.hotness
         %h4.distance
@@ -22,9 +23,9 @@
           - if current_user.id == @promotion.user.id
             =link_to "Edit", edit_promotion_path(@promotion)
             =link_to "Delete", promotion_path(@promotion), method: :delete
-        
+
         - unless DateTime.now > @promotion.end_time
-          =render "charges/stripe_form", promotion: @promotion 
+          =render "charges/stripe_form", promotion: @promotion
 
       .col-md-5
         #map-container
