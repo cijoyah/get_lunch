@@ -8,6 +8,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .wrapper {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.container {
   background: #F5F5F5;
   width: 70%;
   margin: 0 auto;
@@ -67,6 +72,14 @@ header {
     }
   }
 }
+
+.countdown {
+  font-family: helvetica;
+  font-size: 20;
+  width: 100%;
+  text-align:center;
+}
+
 
 @import 'map.scss';
 @import 'home.scss';

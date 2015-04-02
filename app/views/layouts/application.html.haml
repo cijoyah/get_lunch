@@ -19,8 +19,8 @@
     %p.notice= notice
     %p.alert= alert
 
-    .wrapper.body
-    = yield
+    .container-fluid
+      = yield
 
     - unless user_signed_in?
       #sign_up_business.button{"data-target" => "#business_sign_up", "data-toggle" => "modal", :type => "button"}Create Promo

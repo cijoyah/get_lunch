@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   post 'notifications/notify' => 'notifications#notify'
   
   devise_for :users
+  resources :users
   resources :promotions do
     resources :charges
   end

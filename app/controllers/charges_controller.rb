@@ -5,6 +5,7 @@ class ChargesController < ApplicationController
   def create
     @promotion = Promotion.find(params[:promotion_id])
     @amount = @promotion.price*100
+
     business_number = @promotion.user.valid_tel
     customer_number = current_user.valid_tel
 
@@ -30,12 +31,12 @@ class ChargesController < ApplicationController
   rescue Stripe::CardError => e
     flash[:error] = e.message
   ensure
-    redirect_to @promotion
+    redirect_to promotions_path
   end
 
   def send_customer_text(client, customer_number)
     client.messages.create(
-    from: '+441904500767',
+    from: '+15005550006',
     to: customer_number,
     body: 'Hey there!'
     )
@@ -43,7 +44,7 @@ class ChargesController < ApplicationController
 
   def send_business_text(client, business_number)
     client.messages.create(
-    from: '+441904500767',
+    from: '+15005550006',
     to: business_number,
     body: 'Hey fejbhjeshbgeksjhbgsekjbjrng!'
     )
