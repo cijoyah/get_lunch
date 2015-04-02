@@ -17,5 +17,6 @@ class NotificationsController < ApplicationController
       # puts 'fail'
     end
   end
+
   
 end
