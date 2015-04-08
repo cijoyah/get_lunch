@@ -24,9 +24,10 @@ class ChargesController < ApplicationController
     client = Twilio::REST::Client.new Rails.application.secrets.twilio_account_sid, Rails.application.secrets.twilio_auth_token
 
     customer_response = send_customer_text(client, customer_number)
-    business_responce = send_business_text(client, business_number)
+    business_response = send_business_text(client, business_number)
 
-    puts customer_response.status
+    logger.info "customer response is " + customer_response.status
+    logger.info "business response is " + business_response.status
 
   rescue Stripe::CardError => e
     flash[:error] = e.message
@@ -36,7 +37,7 @@ class ChargesController < ApplicationController
 
   def send_customer_text(client, customer_number)
     client.messages.create(
-    from: '+15005550006',
+    from: '+441904500767',
     to: customer_number,
     body: 'Hey there!'
     )
@@ -44,7 +45,7 @@ class ChargesController < ApplicationController
 
   def send_business_text(client, business_number)
     client.messages.create(
-    from: '+15005550006',
+    from: '+441904500767',
     to: business_number,
     body: 'Hey fejbhjeshbgeksjhbgsekjbjrng!'
     )
