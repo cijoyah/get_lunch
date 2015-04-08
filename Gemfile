@@ -24,7 +24,7 @@ gem 'rmagick'
 gem 'stripe'
 gem 'twilio-ruby'
 gem 'twitter'
-gem 'rails_12factor'
+gem 'rails_12factor', group: :production
 gem 'geocoder'
 gem 'font-awesome-sass'
 gem 'fog'
