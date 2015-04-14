@@ -1,0 +1,61 @@
+<div class="container">
+  <div class="row">
+     <% @promotions.each do |promotion| %>
+    <div class="col-md-4">
+      <div class="prms">
+        <div class="photo">
+          <%= link_to (image_tag promotion.user.avatar.url), promotion %>
+        </div>
+        <div class="content">
+          <span class="name"><%= promotion.user.name %></span>
+          <p><%= link_to promotion.pitch, promotion %></p>
+          <span class="price">&pound;<%= promotion.price %></span>
+        <div class="promotion_content" id="promotion_content<%= promotion.id %>">
+          <%= hidden_field_tag "promotion_from", promotion.start_time, :id => "promotion_from_#{promotion.id}", :class => "promotion_from" %>
+          <%= hidden_field_tag "promotion_to", promotion.end_time, :id => "promotion_to_#{promotion.id}", :class => "promotion_to" %>
+          <h4 class="countdown" id="countdown_<%= promotion.id %>">-- Days --Hours -- </h4>
+        </div>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
+
+
+
+
+
+<!-- <div class="container promotion">
+  <div id="promotions">
+    <% @promotions.each do |promotion| %>
+      <div class="promotion">
+        <div class="promotion_image">
+          <%= link_to (image_tag promotion.user.avatar.thumb.url), promotion %>
+        </div>
+        <div class="post_content">
+          <p class="name">
+            <h2>
+              <%= promotion.user.name %>
+            </h2>
+          </p>
+          <div class="title">
+            <p class="pitch">
+              <h2>
+                <%= link_to promotion.pitch, promotion %>
+              </h2>
+            </p>
+          </div>
+
+        </div>
+        <div class="promotion_content" id="promotion_content<%= promotion.id %>">
+          <%= hidden_field_tag "promotion_from", promotion.start_time, :id => "promotion_from_#{promotion.id}", :class => "promotion_from" %>
+          <%= hidden_field_tag "promotion_to", promotion.end_time, :id => "promotion_to_#{promotion.id}", :class => "promotion_to" %>
+          <h4 class="countdown" id="countdown_<%= promotion.id %>">-- Days --Hours -- </h4>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+ -->

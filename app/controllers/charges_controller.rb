@@ -39,7 +39,7 @@ class ChargesController < ApplicationController
     client.messages.create(
     from: '+441904500767',
     to: customer_number,
-    body: 'Hey there!'
+    body: "Thank you for making an order with FoodStop, your order of #{@promotion.pitch}', will be ready for collection in 20mins at "
     )
   end
 
