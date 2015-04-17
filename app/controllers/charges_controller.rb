@@ -2,6 +2,7 @@ class ChargesController < ApplicationController
 
   skip_before_action :verify_authenticity_token
 
+
   def create
     @promotion = Promotion.find(params[:promotion_id])
     @amount = @promotion.price*100
@@ -32,6 +33,8 @@ class ChargesController < ApplicationController
   rescue Stripe::CardError => e
     flash[:error] = e.message
   ensure
+    @promotion.buyers += 1
+    @promotion.save
     redirect_to promotions_path
   end
 

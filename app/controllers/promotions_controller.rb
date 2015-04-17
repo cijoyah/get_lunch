@@ -7,6 +7,11 @@ class PromotionsController < ApplicationController
       @promotions = Promotion.active_promotion.all.order("created_at DESC")
     end
 
+    def expired
+      @promotions = Promotion.expired
+      # render :index
+    end
+
     def show
     end
 

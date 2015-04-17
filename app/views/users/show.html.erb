@@ -1,0 +1,34 @@
+<div class="container">
+
+  <div class="row">
+    <div class="col-md-6 well">
+      <h3>Total Sales</h3>
+      <h4><%= @sale_count %></h4>
+    </div>
+
+    <div class="col-md-6 well">
+      <h3>Total Revenue</h3>
+      <h4><%= @total_sum_of_all_sales %></h4>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <% @promotions.each do |promotion| %>
+      <div class="col-md-4 well">
+        <p><%= promotion.pitch %></p>
+        <p><%= promotion.description %></p>
+        <% if @user == current_user %>
+          <p><%= promotion.price %></p>
+          <p><%= promotion.buyers %></p>
+          <p><%= promotion.total_of_promotions_sold %></p>
+          <p><%= promotion.active_promotion %></p>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+  
+  
+</div>
+
+

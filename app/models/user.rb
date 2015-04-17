@@ -16,6 +16,5 @@ class User < ActiveRecord::Base
      return "+44"+self.tel[1..-1]
    end
   end
-  
-  
+    
 end

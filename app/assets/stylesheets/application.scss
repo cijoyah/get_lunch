@@ -1,0 +1,202 @@
+body {
+  font-family: "Proxima Nova";
+  font-weight: 100;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 100;
+}
+
+.wrapper {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.container {
+  background: #F5F5F5;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.clearfix:before, .clearfix:after {
+  content: " ";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.button {
+  border: 1px solid #9B9B9B;
+  padding: .7rem 1.25rem;
+  border-radius: .3rem;
+  outline: none;
+  background: white;
+  color: #9B9B9B;
+}
+
+#sign_up_business {
+  position: fixed;
+  width: 120px;
+  bottom: 20px;
+  right: 20px;
+}
+
+header {
+  width: 100%;
+  padding: 2rem 0;
+  border-bottom: 1px solid #E4E4E4;
+  #logo {
+    float: left;
+    font-size: 1.75rem;
+    a {
+      color: #333233;
+      text-decoration: none;
+      font-size: 20px;
+      font-weight: bold;
+      &:hover {
+        color: #50A7C7;
+      }
+    }
+  }
+  nav {
+    float: right;
+    a {
+      margin-left: 1.5rem;
+      line-height: 2;
+      list-style-type: none;
+      color: #9B9B9B;
+      text-decoration: none;
+      &:hover {
+        color: #50A7C7;
+      }
+    }
+  }
+}
+
+.promotion-card-timer {
+  font-family: helvetica;
+  font-size: 23px;
+  width: 100%;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin-right: 25px;
+}
+
+
+  // y: 100px;
+  // position: absolute;
+  // margin-bottom: ;
+  // /* float: right; */
+  // right: 0;
+  // /* margin-bottom: 20px; */
+  // bottom: 0;
+  // margin-right: 25px;
+
+.promotion-card-content {
+  padding: 4px;
+  overflow: hidden;
+  .promotion-card-business {
+    font-size: 18px;
+  }
+}
+
+.promotion-card-image img {
+  width:100%;
+  height: 66.66%;
+}// .promotion-card {
+//   padding: 0px;
+//   margin-bottom: 30px;
+//   border-radius: 5px;
+//   border: 1px solid grey;
+// }
+
+// .promotion-card-content {
+//   position: relative;
+//   padding: 0 20px 15px;
+//   text-align: left;
+// }
+
+//     .promotion-card-image {
+//       width: 235.5px;
+//       height: 200px;
+//       margin-bottom: 16px;
+//       overflow: hidden;
+//       border-radius: 4.5px 4.5px 0px 0px;
+      
+//       img {
+//         height: 200px;
+//       }
+//     }
+
+//     .promotion-card-content {
+//       position: relative;
+//       padding: 0 20px 15px;
+//       text-align: left;
+
+//       // .thumbnail-address {
+//       //   width: 200px;
+//       //   white-space: nowrap;
+//       //   overflow: hidden;
+//       //   text-overflow: ellipsis; 
+//       // }
+
+//       .promotion-card-price {
+//         background-color: pink;
+//       }
+
+//       .promotion-card-pitch {
+//         height: 65px;
+//         margin-bottom: 10px;
+//         overflow: hidden;
+//         margin-bottom: 25px;
+//       }
+
+//       .promotion-card-footer {
+//         position: absolute;
+//         bottom: 12px;
+//         width: 196px;
+//         background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, #fff 70%);
+//         padding-top: 70px;
+//       }
+//     }
+//   }
+
+//   .thumbnail:hover {
+//     box-shadow: 0px 0px 10px 0px grey;
+//   }
+
+//   .thumbnail-link {
+//     color: grey;
+
+//     .thumbnail-title {
+//       color: black;
+//       margin-bottom: 0;
+//     }
+//   }
+
+//   .likes {
+//     margin-right: 10px;
+//   }
+// }
+// // .promotion-card {
+// //   padding: 0px;
+// //   margin-bottom: 30px;
+// //   border-radius: 5px;
+// //   border: 1px solid grey;
+// // }
+
+// // .promotion-details {
+// //   background:white ;
+// //   width: 500px;
+// // }
+
+// // .promotion-image {
+// //   width: 100;
+// // }
+
+@import 'map.scss';
+@import 'home.scss';
+@import 'promotionss.scss';

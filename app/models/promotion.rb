@@ -6,4 +6,14 @@ class Promotion < ActiveRecord::Base
     where("end_time > ?", Time.zone.now)
   end
 
+
+  def active_promotion
+    Time.now <= end_time && Time.now >= start_time
+  end
+
+  def total_of_promotions_sold
+    buyers*price
+  end
+
+
 end

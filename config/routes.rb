@@ -8,7 +8,12 @@ Rails.application.routes.draw do
   resources :users
   resources :promotions do
     resources :charges
+      member do
+        get :confirmed
+      end
+      collection do
+        get :expired
+      end
   end
-
   root 'promotions#index'
 end

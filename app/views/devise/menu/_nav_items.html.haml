@@ -1,6 +1,6 @@
 - if user_signed_in?
   - if current_user.role == "business"
-    = link_to current_user.name, edit_user_registration_path
+    = link_to current_user.name, user_path(current_user)
     = link_to "Create Promotion", new_promotion_path, class:"button"
   = link_to('Logout', destroy_user_session_path, :method => :delete)
 - else

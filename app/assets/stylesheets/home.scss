@@ -6,14 +6,16 @@ header {
   background: #ffffff;
 }
 
-.prms {
+#wrapper {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.promotion-card {
   background: #ffffff;
   height: 350px;
   margin-top: 30px;
-  .photo img{
-    width: 100%;
-  }
-  .content {
+  .promotion-card-content {
     padding: 10px;
   }
   .countdown{
@@ -21,8 +23,6 @@ header {
     text-align: right;
   }
 }
-
-
 
 #promotions {
   .promotion {
