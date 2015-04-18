@@ -4,7 +4,7 @@ class PromotionsController < ApplicationController
     before_action :authenticate_user!, except: [:show, :index]
 
     def index
-      @promotions = Promotion.active_promotion.all.order("created_at DESC")
+      @promotions = Promotion.active.all.order("created_at DESC")
     end
 
     def expired
@@ -43,6 +43,17 @@ class PromotionsController < ApplicationController
     def destroy
       @promotion.destroy
       redirect_to root_path
+    end
+
+    def confirmed
+      @promotion = Promotion.find(params[:id])
+    end
+
+    def pause
+      @promotion = Promotion.find(params[:id])
+      @promotion.end_time = Time.now
+      @promotion.save
+      redirect_to user_path(current_user)
     end
 
     private

@@ -1,0 +1,14 @@
+<div class="col-md-4 well">
+  <p><%= promotion.pitch %></p>
+  <p><%= promotion.description %></p>
+  <% if @user == current_user %>
+    <p><%= promotion.price %></p>
+    <p><%= promotion.buyers %></p>
+    <p><%= promotion.total_of_promotions_sold %></p>
+    <p><%= promotion.is_active? %></p>
+  <%= link_to "Edit", edit_promotion_path(promotion) %>
+  <% if promotion.is_active? %>
+    <%= link_to "Pause", pause_promotion_path(promotion) %>
+  <%end%>
+  <% end %>
+</div>

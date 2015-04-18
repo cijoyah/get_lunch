@@ -12,20 +12,14 @@
     </div>
   </div>
 
-
+  <h2>Current promotions: </h2>
   <div class="row">
-    <% @promotions.each do |promotion| %>
-      <div class="col-md-4 well">
-        <p><%= promotion.pitch %></p>
-        <p><%= promotion.description %></p>
-        <% if @user == current_user %>
-          <p><%= promotion.price %></p>
-          <p><%= promotion.buyers %></p>
-          <p><%= promotion.total_of_promotions_sold %></p>
-          <p><%= promotion.active_promotion %></p>
-        <% end %>
-      </div>
-    <% end %>
+    <%= render @active_promotions, partial: "promotions/promotion" %>
+  </div>
+
+  <h2>Passed promotions: </h2>
+  <div class="row">
+    <%= render @expired_promotions, partial: "promotions/promotion" %>
   </div>
   
   

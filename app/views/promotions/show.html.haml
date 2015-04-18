@@ -2,8 +2,8 @@
   .panel-body
     .row
       .col-md-7
-        %h2= @promotion.user.name
         = image_tag @promotion.user.avatar.show.url
+        %h2= @promotion.user.name
         %div{class: "promotion_content", id: "promotion_content#{@promotion.id}"}
           = hidden_field_tag "promotion_from", @promotion.start_time, :id => "promotion_from_#{@promotion.id}", :class => "promotion_from"
           = hidden_field_tag "promotion_to", @promotion.end_time, :id => "promotion_to_#{@promotion.id}", :class => "promotion_to"
@@ -22,7 +22,7 @@
               =link_to "Delete", promotion_path(@promotion), method: :delete
 
 
-          - if @promotion.active_promotion
+          - if @promotion.is_active?
             - if user_signed_in?
               =render "charges/stripe_form", promotion: @promotion
             - else

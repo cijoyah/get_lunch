@@ -6,7 +6,9 @@ class UsersController < ApplicationController
 
     def show
       @user = User.find(params[:id])
-      @promotions = @user.promotions.where('end_time >= ?' , Time.now).where('start_time <= ?' , Time.now)
+      @active_promotions = @user.promotions.active.order("created_at DESC")
+      @expired_promotions = @user.promotions.expired.order("created_at DESC")
+      
       @total_sum_of_all_sales = 0
       @user.promotions.each do |promo|
         @total_sum_of_all_sales = @total_sum_of_all_sales + promo.price * promo.buyers

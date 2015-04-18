@@ -35,7 +35,7 @@ class ChargesController < ApplicationController
   ensure
     @promotion.buyers += 1
     @promotion.save
-    redirect_to promotions_path
+    redirect_to confirmed_promotion_path(@promotion)
   end
 
   def send_customer_text(client, customer_number)

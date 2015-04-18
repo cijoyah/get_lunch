@@ -2,13 +2,11 @@ class Promotion < ActiveRecord::Base
 
   belongs_to :user
 
-  def self.active_promotion
-    where("end_time > ?", Time.zone.now)
-  end
+  scope :active, -> { where("end_time > ?", DateTime.current) }
+  scope :expired, -> { where("end_time < ?", DateTime.current) }
 
-
-  def active_promotion
-    Time.now <= end_time && Time.now >= start_time
+  def is_active?
+    DateTime.current < end_time && DateTime.current > start_time
   end
 
   def total_of_promotions_sold
