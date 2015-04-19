@@ -8,7 +8,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .wrapper {
-  width: 70%;
+  width: 80%;
   margin: 0 auto;
 }
 
@@ -85,16 +85,6 @@ header {
   margin-right: 25px;
 }
 
-
-  // y: 100px;
-  // position: absolute;
-  // margin-bottom: ;
-  // /* float: right; */
-  // right: 0;
-  // /* margin-bottom: 20px; */
-  // bottom: 0;
-  // margin-right: 25px;
-
 .promotion-card-content {
   padding: 4px;
   overflow: hidden;
@@ -106,7 +96,112 @@ header {
 .promotion-card-image img {
   width:100%;
   height: 66.66%;
-}// .promotion-card {
+  padding: 10px 10px 0px 10px;
+
+}
+
+/* promotion show */
+
+.promotion-show {
+    background-color: #fff;
+    padding: 0 !important;
+}
+
+.promotion-image img {
+    width: 100%;
+    padding: 30px;
+}
+
+.promotion-information h1 h2 {
+    padding: 0px 30px 30px 30px;
+}
+
+.promotion-countdown {
+    padding: 0px 30px 0px 15px;
+}
+
+.promotion-countdown h1 {
+  font-size: 20px;
+
+}
+
+.promotion-business {
+  margin: 0px 0px 20px 0px;
+}
+
+.promotion-pitch {
+  padding: 15px;
+
+}
+
+.promotion-pitch h1 {
+  font-size: 20px;
+}
+
+.promotion-pitch h1 {
+  margin: 0px;
+}
+
+.promotion-description h2 {
+  margin: 0px;
+  font-size: 20px;
+
+}
+
+.map-address {
+  background-color: white;
+  left: 15px;
+  padding: 15px 0px 0px 0px;
+
+  #address {
+  padding: 0px 15px 15px 15px;    
+    h4 {
+    margin-top: 0px;
+    }
+  }
+}
+
+.business-location-info {
+  margin-left: 0px;
+  padding:0px;
+}
+.distance {
+      margin-top: 0px;
+}
+
+.walking-time-distance {
+  padding: 0px 15px 15px 15px;
+}
+
+.social-links {
+  background-color: white;
+  margin: 15px 0px 15px;
+  padding: 15px;
+}
+
+.fa-clock-o {
+  margin-right: 15px;
+}
+
+.fa-street-view {
+  margin-right: 15px;
+}
+
+.stripe {
+  padding: 0px;
+}
+
+.stripe-form {
+  margin: 30px;
+  padding: 30px;
+  background-color: white;
+  height: 92px;
+
+}
+
+
+
+// .promotion-card {
 //   padding: 0px;
 //   margin-bottom: 30px;
 //   border-radius: 5px;

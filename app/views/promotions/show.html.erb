@@ -1,0 +1,94 @@
+<div class="wrapper">
+  <div class="panel-body">
+
+    <!-- left columm -->
+    <div class="row">
+      <div class="col-md-7 promotion-show">
+        <div class="promotion-image">
+          <img src="http://foodiesfeed.com/wp-content/uploads/2015/03/foodiesfeed.com_spatchcock-lemon-chicken1_low.jpg" alt="Promotion image">
+        </div>
+        <div class="promotion-pitch">
+          <h1><em><%= @promotion.pitch %></em></h1>
+        </div>
+        <div class="promotion-countdown">
+          <div class="promotion_content" id="promotion_content<%= @promotion.id %>">
+            <%= hidden_field_tag "promotion_from", @promotion.start_time, :id => "promotion_from_#{@promotion.id}", :class => "promotion_from" %>
+            <%= hidden_field_tag "promotion_to", @promotion.end_time, :id => "promotion_to_#{@promotion.id}", :class => "promotion_to" %>
+            <h1 class="countdown" id="countdown_<%= @promotion.id %>">-- Days --Hours -- Mins -- Secs</h1>
+          </div>
+        </div>
+        <div class="row">
+          <div class="promotion-information">
+            <div class="promotion-business">
+              <h1><%= @promotion.user.name %></h1>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="promotion-description">
+                  <h2><%= @promotion.description %></h2>
+                </div>
+              </div>
+            </div>         
+          </div>
+        </div>
+      </div>
+
+      <!-- right column -->
+      <div class="col-md-5 map-address">
+        <div class="col-md-12" id="map-container">
+          <div id="map-canvas"></div>
+        </div>
+        <div class="row business-location-info col-md-12" >  
+          <i width="40"class="fa fa-map-marker fa-5x col-md-1">
+          </i>
+          <div class="business-address col-md-6" id="address">
+            <h4><%= @promotion.user.address %></h4>
+            <h4><%= @promotion.user.city %></h4>
+            <h4><%= @promotion.user.postcode %></h4>
+          </div>
+          <div class="walking-time-distance col-md-5">
+            <h5 class="distance"><i class="fa fa-street-view"></i></h4>
+            <h5 class="duration"><i class="fa fa-clock-o"></i></h4> 
+          </div>
+        </div>
+      </div>
+      <div class="row col-md-5 stripe">
+        <% if @promotion.is_active? %>
+          <% if user_signed_in? %>
+            <div class="stripe-form">
+              <%= render "charges/stripe_form", promotion: @promotion %>
+            </div>
+          <% else %>
+            please login
+          <% end %>
+        <% else %>
+          promo ended
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+        <!-- <div class="social-links">
+          <div class="col-md-4 facebook">
+            <i class="fa fa-facebook-official"></i>
+          </div>
+          <div class="col-md-4 twitter">
+            <i class="fa fa-twitter"></i>
+          </div>
+        </div>
+ -->
+       
+
+      
+     
+
+
+
+
+
+
+
+
+
+
