@@ -29,6 +29,7 @@ gem 'rails_12factor', group: :production
 gem 'geocoder'
 gem 'font-awesome-sass'
 gem 'fog'
+gem 'datetimepicker-rails', github: 'zpaulovics/datetimepicker-rails', branch: 'master', submodules: true
 
 
 group :development, :test do
