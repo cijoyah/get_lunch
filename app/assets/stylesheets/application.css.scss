@@ -9,7 +9,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .wrapper {
-  width: 80%;
+  width: 68%;
   margin: 0 auto;
 }
 
@@ -17,6 +17,7 @@ h1, h2, h3, h4, h5, h6 {
   background: #F5F5F5;
   width: 70%;
   margin: 0 auto;
+  margin-bottom: 100px;
 }
 
 .clearfix:before, .clearfix:after {
@@ -123,11 +124,16 @@ header {
 
 .promotion-countdown h1 {
   font-size: 20px;
+  padding-left: 15px;
 
 }
 
 .promotion-business {
   margin: 0px 0px 20px 0px;
+}
+
+.promotion-business {
+  padding: 0px 30px 0px 30px;
 }
 
 .promotion-pitch {
@@ -136,17 +142,18 @@ header {
 }
 
 .promotion-pitch h1 {
+  margin: 0px;
+  padding-left: 15px;
   font-size: 20px;
 }
 
-.promotion-pitch h1 {
-  margin: 0px;
-}
-
-.promotion-description h2 {
+.promotion-description {
   margin: 0px;
   font-size: 20px;
+}
 
+.promotion-description p {
+  padding: 0px 30px 0px 30px;
 }
 
 .map-address {

@@ -1,4 +1,4 @@
-<div class="container">
+<div class="wrapper">
 
   <div class="row">
     <div class="col-md-6 well">
@@ -12,12 +12,12 @@
     </div>
   </div>
 
-  <h2>Current promotions: </h2>
+  <h2>Active promotions: </h2>
   <div class="row">
     <%= render @active_promotions, partial: "promotions/promotion" %>
   </div>
 
-  <h2>Passed promotions: </h2>
+  <h2> Expired promotions: </h2>
   <div class="row">
     <%= render @expired_promotions, partial: "promotions/promotion" %>
   </div>
