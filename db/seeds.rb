@@ -5,7 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-
+Promotion.destroy_all
+User.destroy_all
 
 promotion_1 = Promotion.create(pitch: "Proustian flashback Donkey Sauce", image: "http://foodiesfeed.com/wp-content/uploads/2015/03/foodiesfeed.com_spatchcock-lemon-chicken1_low.jpg", description: "Approachable apud make love to the Yum-O! but next poach caviar soft-serve flavor circa lest bite Top Chef. Save and gooey Texas-style fresh-frozen yet foodies sushi or savor vaporize but dry rub Escoffier make love. Against for besides flavor profile for alongside glaze so after I saw it on an episode of Bizarre Foods have you ever noticed how but but deep-fried. ", price: "5", start_time: Time.now, end_time: Time.now+99.days, cuisine: "Mexican" )
 promotion_2 = Promotion.create(pitch: "Julia Child fall off the bone fried chicken", image: "http://foodiesfeed.com/wp-content/uploads/2014/09/foodiesfeed.com_DSC_0047_low-e1417718231140.jpg", description: "Orgasm enrobed just give up and eat a pint of Ben & Jerry's vis-a-vis or so succulent minus glaze fry midst boast before fatty. Yet approachable round whip my visit to the French Laundry just give up and eat a pint of Ben & Jerry's for Guy Fieri dumplings seasonal but Japan food truck bake foam. Bake roast David Chang so reserve fall-off-the-bone so Iron Chef have you ever noticed how slurp.", price: "7", start_time: Time.now, end_time: Time.now+99.days, cuisine: "Chinese" )
@@ -23,20 +24,29 @@ promotion_13 = Promotion.create(pitch: "Savory farm-fresh grill barring sous vid
 promotion_14 = Promotion.create(pitch: "Despite nor amidst yummy chicken", image: "http://foodiesfeed.com/wp-content/uploads/2014/09/foodiesfeed.com_DSC_0009-4_low-e1417700684190.jpg", description: "Cultural unlike yet over Texas-style chicken taste. Taste melting spicy or Proustian flashback for for mid toothsome mouthfeel yet cheesy gelatinous by my visit to the French Laundry source. Fall-off-the-bone enrobed barbecue Cronut throughout hedonistic above stoner food like fall-off-the-bone cheese for bake bake.", price: "6", start_time: Time.now, end_time: Time.now+99.days, cuisine: "Mexican" )
 promotion_15 = Promotion.create(pitch: "Glaze savor seasonal fruity or chop so bake", image: "http://foodiesfeed.com/wp-content/uploads/2014/10/foodiesfeed.com_homemade-sushi-3_low-e1417700531752.jpg", description: "Cultural unlike yet over Texas-style chicken taste. Taste melting spicy or Proustian flashback for for mid toothsome mouthfeel yet cheesy gelatinous by my visit to the French Laundry source. Fall-off-the-bone enrobed barbecue Cronut throughout hedonistic above stoner food like fall-off-the-bone cheese for bake bake.", price: "5", start_time: Time.now, end_time: Time.now+99.days, cuisine: "British" )
 
-user_1 = User.create(email: "gs@getlunch.com", name: "Gourmet San", role: "business", address: "261 Bethnal Green Road", city: "London", postcode: "E2 6AH", tel:"0796056601")
-user_2 = User.create(email: "hb@getlunch.com", name: "Honest Burgers", role: "business", address: "12 Widegate St", city: "London", postcode: "E1 7HP", tel:"0796056601")
-user_3 = User.create(email: "le@getlunch.com", name: "Lupita East", role: "business", address: "60-62 Commercial St.", city: "London", postcode: "E1 6LT", tel:"0796056601" )
-user_4 = User.create(email: "wb@getlunch.com", name: "Walluc Bistrot", role: "business", address: "40 Redchurch St", city: "London", postcode: "E2 7DP", tel:"0796056601" )
-user_5 = User.create(email: "pe@getlunch.com", name: "Pizza East", role: "business", address: "56 Shoreditch High St", city: "London", postcode: "E1 6JJ", tel:"0796056601" )
-user_6 = User.create(email: "tf@getlunch.com", name: "Tas Firin", role: "business", address: "160 Bethnal Green Road", city: "London", postcode: "E2 6DG", tel:"0796056601" )
-user_7 = User.create(email: "di@getlunch.com", name: "Dishoom", role: "business", address: "7 Boundary St, Shoreditch", city: "London", postcode: "E2 7JE", tel:"0796056601" )
+user_1 = User.create!(email: "gs@getlunch.com", name: "Gourmet San", role: "business", address: "261 Bethnal Green Road", city: "London", postcode: "E2 6AH", tel:"0796056601", password:"password")
+user_2 = User.create!(email: "hb@getlunch.com", name: "Honest Burgers", role: "business", address: "12 Widegate St", city: "London", postcode: "E1 7HP", tel:"0796056601", password:"password")
+user_3 = User.create!(email: "le@getlunch.com", name: "Lupita East", role: "business", address: "60-62 Commercial St.", city: "London", postcode: "E1 6LT", tel:"0796056601" , password:"password")
+user_4 = User.create!(email: "wb@getlunch.com", name: "Walluc Bistrot", role: "business", address: "40 Redchurch St", city: "London", postcode: "E2 7DP", tel:"0796056601" , password:"password")
+user_5 = User.create!(email: "pe@getlunch.com", name: "Pizza East", role: "business", address: "56 Shoreditch High St", city: "London", postcode: "E1 6JJ", tel:"0796056601" , password:"password")
+user_6 = User.create!(email: "tf@getlunch.com", name: "Tas Firin", role: "business", address: "160 Bethnal Green Road", city: "London", postcode: "E2 6DG", tel:"0796056601" , password:"password")
+user_7 = User.create!(email: "di@getlunch.com", name: "Dishoom", role: "business", address: "7 Boundary St, Shoreditch", city: "London", postcode: "E2 7JE", tel:"0796056601" , password:"password")
 
-user_1.promotions << [promotion_2, promotion_7]
-user_2.promotions << [promotion_15, promotions_11]
+user_1.promotions << [promotion_2, promotion_14]
+user_2.promotions << [promotion_15, promotion_11]
 user_3.promotions << [promotion_6, promotion_7]
 user_4.promotions << [promotion_1, promotion_8, promotion_13]
 user_5.promotions << [promotion_3, promotion_9]
 user_6.promotions << [promotion_4, promotion_10]
 user_7.promotions << [promotion_5, promotion_12]
+
+user_1.save
+user_2.save
+user_3.save
+user_4.save
+user_5.save
+user_6.save
+user_7.save
+
 
 
