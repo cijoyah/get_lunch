@@ -9,9 +9,8 @@ class Promotion < ActiveRecord::Base
     DateTime.current < end_time && DateTime.current > start_time
   end
 
-  def total_of_promotions_sold
+  def value_of_promotion_sold
     buyers*price
   end
-
 
 end
