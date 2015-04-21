@@ -22,10 +22,12 @@
     <%= render @active_promotions, partial: "promotions/promotion" %>
   </div>
 
-  <h2> Expired promotions: </h2>
-  <div class="row">
-    <%= render @expired_promotions, partial: "promotions/promotion" %>
-  </div>
+  <% unless @expired_promotions.count <= 0 %>
+    <h2> Expired promotions: </h2>
+    <div class="row">
+      <%= render @expired_promotions, partial: "promotions/promotion" %>
+    </div>
+  <% end %>
   
   
 </div>
