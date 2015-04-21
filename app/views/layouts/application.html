@@ -14,14 +14,7 @@
   </head>
   <body>
     <header>
-      <div class="wrapper clearfix">
-        <div id="logo">
-          <%= link_to "FoodStop", root_path %>
-        </div>
-        <nav>
-          <%= render 'devise/menu/nav_items' %>
-        </nav>
-      </div>
+      <%= render 'devise/menu/nav_items' %>
     </header>
     <div class="container-fluid">
       <%= yield %>

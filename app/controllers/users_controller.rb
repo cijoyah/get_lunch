@@ -23,6 +23,11 @@ class UsersController < ApplicationController
         @promotion_count = @user.promotions.length
     end
 
+    def edit
+      @user = User.find(params[:id])
+    end
+
+
     private
   
 end
