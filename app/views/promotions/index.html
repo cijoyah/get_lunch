@@ -1,6 +1,5 @@
 <div id="wrapper">
   <div class="promotion-card-container">
-  
     <div class="row">
       <% @promotions.each do |promotion| %>
       <%= link_to promotion do %>
@@ -27,9 +26,13 @@
         </div>
       <% end %>
       <% end %>
+    <div class="row">
+      <div class="pagination">
+        <%= will_paginate @promotions, renderer: BootstrapPagination::Rails,class: "pagination pagination-centered" %>
+      </div>
+    </div>
     </div>
   </div>
 </div>
 
-<%= will_paginate @promotions %>
 

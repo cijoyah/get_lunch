@@ -31,7 +31,7 @@ gem 'font-awesome-sass'
 gem 'fog'
 gem 'bootstrap3-datetimepicker-rails', '~> 4.7.14'
 gem 'momentjs-rails', '>= 2.9.0'
-gem 'will_paginate'
+gem 'will_paginate-bootstrap'
 
 
 group :development, :test do

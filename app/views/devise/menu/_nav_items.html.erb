@@ -28,8 +28,8 @@
           <% end %>
           <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
         <% else %>
-          <button class="button" data-target="#sign_in" data-toggle="modal">Sign In </button>
-          <button class="button" data-target="#sign_up_customer" data-toggle="modal" type="button">Sign Up </button>
+          <button type="button" class="btn btn-default navbar-btn"data-target="#sign_in" data-toggle="modal">Sign In </button>
+          <button type="button" class="btn btn-default navbar-btn"data-target="#sign_up_customer" data-toggle="modal" type="button">Sign Up </button>
         <% end %>
       </ul>
     </div><!-- /.navbar-collapse -->
