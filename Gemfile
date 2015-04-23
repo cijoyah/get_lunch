@@ -32,6 +32,7 @@ gem 'fog'
 gem 'bootstrap3-datetimepicker-rails', '~> 4.7.14'
 gem 'momentjs-rails', '>= 2.9.0'
 gem 'will_paginate-bootstrap'
+gem 'social-share-button'
 
 
 group :development, :test do
