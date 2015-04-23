@@ -42,7 +42,10 @@ class ChargesController < ApplicationController
     client.messages.create(
     from: '+441904500767',
     to: customer_number,
-    body: "Thank you for making an order with FoodStop, your order of #{@promotion.pitch}', will be ready for collection in 20mins at "
+    body: "Thank you for making an order with GetLunch, your order of #{@promotion.pitch}, will be ready for collection in 20mins.
+      #{@promotion.user.name} 
+      #{@promotion.user.address}
+      #{@promotion.user.postcode}"
     )
   end
 
@@ -50,7 +53,7 @@ class ChargesController < ApplicationController
     client.messages.create(
     from: '+441904500767',
     to: business_number,
-    body: 'Hey fejbhjeshbgeksjhbgsekjbjrng!'
+    body: "#{current_user.name} has just ordered #{@promotion.pitch}"
     )
   end
   
