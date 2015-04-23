@@ -11,7 +11,7 @@
             <div class="promotion-card-content">
               <p class="promotion-card-business"><strong><%= promotion.user.name %></strong></p>
               <p class="promotion-card-pitch"><%= link_to promotion.pitch, promotion %></p>
-              <p class="promotion-card-price"><em>&pound<%= promotion.price %></em></p>
+              <p class="promotion-card-price"><em>&pound<%= number_with_precision(promotion.price, precision: 2) %></em></p>
               <div class="promotion-card-footer">
                 <div class="promotion-card-timer">
                   <div class="promotion_content" id="promotion_content<%= promotion.id %>">

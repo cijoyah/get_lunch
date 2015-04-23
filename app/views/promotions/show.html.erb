@@ -8,7 +8,7 @@
           <%= image_tag @promotion.image %>
         </div>
         <div class="promotion-price">
-          <h1>&pound<%= @promotion.price %></h1>
+          <h1>&pound<%= number_with_precision(@promotion.price, precision: 2)   %></h1>
         </div>
         <div class="promotion-pitch">
           <h1><em><%= @promotion.pitch %></em></h1>
