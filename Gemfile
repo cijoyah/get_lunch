@@ -33,6 +33,7 @@ gem 'bootstrap3-datetimepicker-rails', '~> 4.7.14'
 gem 'momentjs-rails', '>= 2.9.0'
 gem 'will_paginate-bootstrap'
 gem 'social-share-button'
+gem 'aws-sdk', '< 2.0'
 
 
 group :development, :test do
@@ -41,5 +42,6 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring'
+  gem 'dotenv-rails'
 end
 

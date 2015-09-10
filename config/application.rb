@@ -30,5 +30,10 @@ module GetLunch
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    config.AWS_ACCESS_KEY_ID = ENV['AWS_ACCESS_KEY_ID'] || ''
+    config.AWS_SECRET_ACCESS_KEY = ENV['AWS_SECRET_ACCESS_KEY'] || ''
+    config.S3_BUCKET = ENV['S3_BUCKET'] || ''
+
   end
 end

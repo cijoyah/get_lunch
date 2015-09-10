@@ -5,7 +5,7 @@
     <div class="row">
       <div class="col-md-7 promotion-show">
         <div class="promotion-image">
-          <%= image_tag @promotion.image %>
+          <%= image_tag @promotion.image  %>
         </div>
         <div class="promotion-price">
           <h1>&pound<%= number_with_precision(@promotion.price, precision: 2)   %></h1>
